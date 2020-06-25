@@ -3,7 +3,7 @@ import { Link, withRouter } from "react-router-dom";
 
 class Layout extends React.Component {
   navigate() {
-    console.log(this.props.history);
+    console.log('history:', this.props.history);
     this.props.history.push("/");
   }
   render() {
@@ -11,6 +11,7 @@ class Layout extends React.Component {
        <div>
          <h1>KillerNews.net</h1>
          {this.props.children}
+         <Link to="/archives/some-other-articles" className="btn btn-warning">archives (some other articles)</Link>
          <Link to="/archives" className="btn btn-danger">archives</Link>
          <Link to="/settings" className="btn btn-success">settings</Link>
         <button className="btn btn-info" onClick={this.navigate.bind(this)}>featured</button>
